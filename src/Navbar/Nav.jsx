@@ -9,25 +9,25 @@ const Nav = () => {
     justifyContent:"center", 
     alignItems:"center", 
     fontFamily: '"Dancing Script", cursive', 
-    fontSize: "1.5rem", padding: "0.5rem", 
-    backgroundColor: "#222", color: "white"}}>
+    fontSize: "2.5rem", padding: "1.5rem", borderBottom: "2px solid #b5b2b4ff",
+    backgroundColor: "white", color: "#e214a8ff"}}>
         CAF HillsNToes
     </div>
       <div
         style={{
           width: "100%",
-          padding: "1rem",
-          background: "#e9a8a8ff",
-          color: "#fff",
+          padding: "0.8rem",
+          background: "#fff",
+          color: "black",
           textAlign: "center",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
         }}
       >
-        <Link to="/" style={{ flex: 1 } }>Home</Link>
-        <Link to="/Shoes" style={{ flex: 1 } }>Shoes</Link>
-        <Link to="/Clothing" style={{ flex: 1 } }>Clothing</Link>
+        <Link to="/" style={{ flex: 1 ,color:"black",textDecoration:"none"}}>Home</Link>
+        <Link to="/Shoes" style={{ flex: 1 , color:"black",textDecoration:"none"}}>Shoes</Link>
+        <Link to="/Clothing" style={{ flex: 1,color:"black",textDecoration:"none" }}>Clothing</Link>
         <div style={{ flex: 1 }}>
         
               <form class="d-flex" role="search">
@@ -36,6 +36,7 @@ const Nav = () => {
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
+                 
                 />
                 <button class="btn" type="submit" style={{backgroundColor: "#222", color: "white"}}>
                   Search
@@ -57,7 +58,7 @@ const Nav = () => {
               width={20}
               height={20}
               className="size-6"
-              color="blue"
+              color="#e214a8ff"
             >
               <path
                 strokeLinecap="round"
@@ -72,6 +73,7 @@ const Nav = () => {
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
+              style={{ backgroundColor: "white", color: "black", border: "none" }}
             >
               Account
               <svg
@@ -83,7 +85,7 @@ const Nav = () => {
                 className="size-6"
                 width={20}
                 height={20}
-                color="blue"
+                color="#e214a8ff"
               >
                 <path
                   strokeLinecap="round"
