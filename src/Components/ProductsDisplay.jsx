@@ -16,12 +16,14 @@ const ProductsDisplay = ({ title = "Product Title", description = "Product descr
     <div style={{
       display: 'flex',
       gap: '2rem',
-      alignItems: 'flex-start',
+      alignItems: 'center',
       flexWrap: 'wrap',
-      padding: '2rem'
+      padding: '2rem',
+      justifyContent:'center'
+      
     }}>
       {/* Left Column: Images */}
-      <div style={{ flex: '1 1 300px', maxWidth: 400 }}>
+      <div style={{ flex: '1 1 300px', maxWidth: 400, marginLeft:'2rem'}}>
         <img
           src={mainImage}
           alt="Main product"
@@ -55,9 +57,10 @@ const ProductsDisplay = ({ title = "Product Title", description = "Product descr
           ))}
         </div>
       </div>
+
       {/* Right Column: Details */}
-      <div style={{ flex: '2 1 300px', maxWidth: 500 }}>
-        <h2 style={{ marginBottom: '1rem' }}>{title}</h2>
+      <div style={{ flex: '2 1 300px', maxWidth: 500,marginLeft:'2rem' }}>
+        <h2 style={{ marginBottom: '2rem' }}>{title}</h2>
         <p style={{ marginBottom: '1.5rem', color: '#555' }}>{description}</p>
         <h3 style={{ color: '#e214a8ff', marginBottom: '2rem' }}>{price}</h3>
         <div>

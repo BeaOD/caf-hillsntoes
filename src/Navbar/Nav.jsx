@@ -10,8 +10,8 @@ const Nav = () => {
     alignItems:"center", 
     fontFamily: '"Dancing Script", cursive', 
     fontSize: "2.5rem", padding: "1.5rem", borderBottom: "2px solid #b5b2b4ff",
-    backgroundColor: "white", color: "#e214a8ff"}}>
-        CAF HillsNToes
+    backgroundColor: "white"}}>
+       <Link to="/" style={{textDecoration:'none', color: "#e214a8ff"}}>CAF HillsNToes </Link> 
     </div>
       <div
         style={{
@@ -86,6 +86,7 @@ const Nav = () => {
                 width={20}
                 height={20}
                 color="#e214a8ff"
+                
               >
                 <path
                   strokeLinecap="round"
@@ -96,14 +97,18 @@ const Nav = () => {
             </button>
             <ul class="dropdown-menu">
               <li>
+                <Link to="/Login" style={{textDecoration:"none" }}>
                 <button class="dropdown-item" type="button">
                   Login
                 </button>
+                </Link>
               </li>
               <li>
+                <Link to="SignUp" style={{textDecoration:"none"}}>
                 <button class="dropdown-item" type="button">
                   Signup
                 </button>
+                </Link>
               </li>
             </ul>
           </div>

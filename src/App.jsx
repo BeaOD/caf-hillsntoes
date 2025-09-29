@@ -8,6 +8,8 @@ import ProductsDisplay from './Components/ProductsDisplay'
 import Nav from './Navbar/Nav'
 import Footer from './Footer/Footer'
 import Copyright from './Footer/Copyright'
+import Login from './Account/Login'
+import SignUp from './Account/Signup'
 
 function App() {
   
@@ -20,6 +22,8 @@ function App() {
         <Route path="/Clothing" element={<Clothing />} />
         <Route path="/Shoes" element={<Shoes />} />
         <Route path="/ProductsDisplay/:id" element={<ProductsDisplay />} />
+        <Route path="/Login" element={<Login/>}/>
+        <Route path="/Signup" element={<SignUp/>}/>
       </Routes>
       <Footer />
       <Copyright />
