@@ -25,9 +25,7 @@ const Login = () => {
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Login</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Email Address
-            </label>
+           
             <input
               type="email"
               id="email"
@@ -37,12 +35,11 @@ const Login = () => {
               required
               className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
               placeholder="Enter your email"
+              style={{width:"400px",borderRadius:"5px", marginBottom:"1rem", height:"3rem"}}
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
+           
             <input
               type="password"
               id="password"
@@ -52,16 +49,18 @@ const Login = () => {
               required
               className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
               placeholder="Enter your password"
+              style={{width:"400px",borderRadius:"5px", marginBottom:"1rem", height:"3rem"}}
             />
           </div>
           <div className="text-right">
-            <Link to="/forgot-password" className="text-sm text-blue-600 hover:underline">
+            <Link to="/forgot-password" className="text-sm " style={{textDecoration:"none", color:"black"}}>
               Forgot Password?
             </Link>
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+            className=" text-white "
+            style={{borderRadius:"5px", marginTop:"1.5rem", padding: "0.5rem", fontSize: "1rem",width:"400px", backgroundColor: "#e214a8ff"}}
           >
             Login
           </button>
