@@ -18,7 +18,10 @@ const ForgotPassword = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Forgot Password</h1>
+        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center"
+        style={{fontFamily: '"Dancing Script", cursive' , color: "#e214a8ff",margin:"1.5rem",padding:"0.5rem"}}
+        >Forgot Password
+        </h1>
         <p className="text-center text-gray-600 mb-4">
           Enter your email address to receive a password reset link.
         </p>
@@ -36,11 +39,13 @@ const ForgotPassword = () => {
               required
               className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
               placeholder="Enter your email"
+              style={{width:'350px', marginLeft:'1.0rem', borderRadius:'5px'}}
             />
           </div>
           <button
             type="submit"
             className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+            style={{marginTop:'1.5rem', backgroundColor:'#e214a8ff', borderRadius:'5px'}}
           >
             Send Reset Link
           </button>

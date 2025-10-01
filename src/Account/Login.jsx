@@ -22,7 +22,10 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Login</h1>
+        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center"
+        style={{fontFamily: '"Dancing Script", cursive', color: "#e214a8ff",margin:"1.5rem",padding:"0.5rem"}}>
+            Login
+            </h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
            
@@ -53,7 +56,7 @@ const Login = () => {
             />
           </div>
           <div className="text-right">
-            <Link to="/forgot-password" className="text-sm " style={{textDecoration:"none", color:"black"}}>
+            <Link to="/ForgotPassword" className="text-sm " style={{textDecoration:"none", color:"black"}}>
               Forgot Password?
             </Link>
           </div>

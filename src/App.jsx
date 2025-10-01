@@ -10,6 +10,10 @@ import Footer from './Footer/Footer'
 import Copyright from './Footer/Copyright'
 import Login from './Account/Login'
 import SignUp from './Account/Signup'
+import ForgotPassword from './Account/ForgotPassword'
+import About from './Pages/About'
+import Delivery from './Pages/Delivery'
+
 
 function App() {
   
@@ -24,6 +28,9 @@ function App() {
         <Route path="/ProductsDisplay/:id" element={<ProductsDisplay />} />
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Signup" element={<SignUp/>}/>
+        <Route path="/ForgotPassword" element={<ForgotPassword/>}/>
+        <Route path="/About" element={<About/>}/>
+        <Route path="/Delivery" element={<Delivery/>}/>
       </Routes>
       <Footer />
       <Copyright />

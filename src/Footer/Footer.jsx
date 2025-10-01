@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -6,8 +7,8 @@ const Footer = () => {
         <div
             style={{
                 padding: '1rem',
-                background: '#222',
-                color: '#fff',
+                background: '#faf8f8ff',
+                color: '#999696ff',
                 textAlign: 'center',
                 display: 'flex',
                 justifyContent: 'space-between',
@@ -30,9 +31,12 @@ const Footer = () => {
                 <p>tiktok</p>
                 </div>
             <div style={{ flex: 1 }}>
+                 <Link to="/About" style={{textDecoration:'none',color:'#999696ff'}}>
                  <p>ABOUT HEELSNTOES</p>
-                  <p>HOW WE DELIVER</p>
-                
+                 </Link>
+                  <Link to="/Delivery" style={{textDecoration:'none',color:'#999696ff'}}><p>HOW WE DELIVER</p></Link>
+                <p>LOCATION OF SHOP GOES HERE</p>
+
             </div>
         </div>
         </>

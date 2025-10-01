@@ -1,13 +1,16 @@
 import React from 'react';
+import FeaturedClothing from '../../Components/FeaturedClothing';
 
 const Shoes = () => {
-    return (
-        <div>
-            <h1>Shoes</h1>
-            <p>Browse our collection of shoes.</p>
-            {/* Add shoe products or components here */}
-        </div>
-    );
+  // You can pass products as props if needed, or let FeaturedClothing handle its own data
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h1 style={{ textAlign: 'center', color: '#e214a8ff', fontFamily: '"Dancing Script", cursive' }}>
+        Clothing Products
+      </h1>
+      <FeaturedClothing />
+    </div>
+  );
 };
 
 export default Shoes;
