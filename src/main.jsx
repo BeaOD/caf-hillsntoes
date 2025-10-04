@@ -1,6 +1,6 @@
 // import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { CartProvider } from './Components/CartProvider.jsx';
+import  CartProvider  from './Components/CartProvider.jsx';
 import './index.css'
 import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';

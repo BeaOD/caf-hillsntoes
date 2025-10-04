@@ -13,6 +13,7 @@ import SignUp from './Account/Signup'
 import ForgotPassword from './Account/ForgotPassword'
 import About from './Pages/About'
 import Delivery from './Pages/Delivery'
+import ProductPayment from './Payment/ProductPayment'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/ForgotPassword" element={<ForgotPassword/>}/>
         <Route path="/About" element={<About/>}/>
         <Route path="/Delivery" element={<Delivery/>}/>
+        <Route path="/ProductPayment" element={<ProductPayment/>}/>
       </Routes>
       <Footer />
       <Copyright />

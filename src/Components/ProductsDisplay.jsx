@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import useCart from './UseCart';
 
 const images = [
   '/assets/pesce-huang-pEzLon__DfM-unsplash.jpg',
@@ -11,6 +13,13 @@ const images = [
 const ProductsDisplay = ({ title = "Product Title", description = "Product description goes here.", price = "$99.99" }) => {
   const [mainImage, setMainImage] = useState(images[0]);
   const {id} = useParams()
+
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleBuyNow = () => {
+    addToCart({ id, title, description, image, price });
+    navigate('/checkout'); // or '/payment'
 
   return (
     <div style={{
@@ -67,6 +76,7 @@ const ProductsDisplay = ({ title = "Product Title", description = "Product descr
             Product ID: {id}
         </div>
         <button
+        onClick={handleBuyNow}
           style={{
             padding: '0.8rem 2rem',
             background: '#e214a8ff',

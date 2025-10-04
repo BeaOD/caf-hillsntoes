@@ -1,10 +1,20 @@
 import Counter from './Counter';
 import Sizes from './Sizes';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
+import useCart from './UseCart';
 
 
-// const Card = ({ title, description,image  }) => (
-const Card = ({ id, title, description }) => (
+// const Card = ({ id,title, description,image,price }) => (
+const Card = ({ id, title, description,image,price }) => {
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleBuyNow = () => {
+    addToCart({ id, title, description, image, price });
+    navigate('/ProductPayment'); // or '/payment'
+  };
+
+    return (
    <Link to={`/ProductsDisplay/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
     <div style={{
         border: '1px solid #ddd',
@@ -30,7 +40,11 @@ const Card = ({ id, title, description }) => (
             {description}
             This is a sample product description.
             </p>
-        <button style={{
+             <p><Sizes /></p>
+            <p><Counter /></p>
+        <button 
+        onClick={handleBuyNow}
+        style={{
             marginTop: '12px',
             padding: '8px 16px',
             backgroundColor: '#e214a8ff',
@@ -39,12 +53,13 @@ const Card = ({ id, title, description }) => (
             borderRadius: '4px',
             cursor: 'pointer'
         }}>
-            <p><Sizes /></p>
-            <p><Counter /></p>
+           
             Buy Now
         </button>
     </div>
     </Link>
 );
+
+};
 
 export default Card;
