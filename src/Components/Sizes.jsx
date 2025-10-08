@@ -3,36 +3,41 @@ import React, { useState } from 'react';
 const initialSizes = [36, 37, 38.5, 39, 40.5, 41, 42.5];
 
 const Sizes = () => {
-  const [sizes, setSizes] = useState(initialSizes);
-  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedSize, setSelectedSize] = useState('');
 
-  const handleSelect = (size) => {
-    setSelectedSize(size);
+  const handleSelect = (event) => {
+    setSelectedSize(event.target.value);
   };
 
   return (
     <div style={{ textAlign: 'center', margin: '2rem 0' }}>
       <h3>Available Shoe Sizes</h3>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-        {sizes.map(size => (
-          <button
-            key={size}
-            onClick={() => handleSelect(size)}
-            style={{
-              padding: '0.5rem 1.2rem',
-              borderRadius: '6px',
-              border: selectedSize === size ? '2px solid #e214a8ff' : '1px solid #ccc',
-              background: selectedSize === size ? '#e214a8ff' : '#fff',
-              color: selectedSize === size ? '#fff' : '#222',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              fontSize: '1rem'
-            }}
-          >
+      <select
+        value={selectedSize}
+        onChange={handleSelect}
+        style={{
+          padding: '0.5rem',
+          borderRadius: '6px',
+          border: '1px solid #ccc',
+          background: '#fff',
+          color: '#222',
+          fontWeight: 'bold',
+          fontSize: '1rem',
+          cursor: 'pointer',
+          outline: 'none',
+          width: '200px',
+          textAlign: 'center'
+        }}
+      >
+        <option value="" disabled>
+          Select a size
+        </option>
+        {initialSizes.map(size => (
+          <option key={size} value={size}>
             {size}
-          </button>
+          </option>
         ))}
-      </div>
+      </select>
       {selectedSize && (
         <div style={{ marginTop: '1rem', color: '#e214a8ff', fontWeight: 'bold' }}>
           Selected Size: {selectedSize}

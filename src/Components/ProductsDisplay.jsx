@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams,useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import useCart from './UseCart';
 
@@ -12,14 +12,14 @@ const images = [
 
 const ProductsDisplay = ({ title = "Product Title", description = "Product description goes here.", price = "$99.99" }) => {
   const [mainImage, setMainImage] = useState(images[0]);
-  const {id} = useParams()
-
+  const { id } = useParams();
   const { addToCart } = useCart();
   const navigate = useNavigate();
 
   const handleBuyNow = () => {
-    addToCart({ id, title, description, image, price });
-    navigate('/checkout'); // or '/payment'
+    addToCart({ id, title, description, price });
+    navigate('/ProductPayment');
+  };
 
   return (
     <div style={{
@@ -28,11 +28,10 @@ const ProductsDisplay = ({ title = "Product Title", description = "Product descr
       alignItems: 'center',
       flexWrap: 'wrap',
       padding: '2rem',
-      justifyContent:'center'
-      
+      justifyContent: 'center'
     }}>
       {/* Left Column: Images */}
-      <div style={{ flex: '1 1 300px', maxWidth: 400, marginLeft:'2rem'}}>
+      <div style={{ flex: '1 1 300px', maxWidth: 400, marginLeft: '2rem' }}>
         <img
           src={mainImage}
           alt="Main product"
@@ -68,15 +67,14 @@ const ProductsDisplay = ({ title = "Product Title", description = "Product descr
       </div>
 
       {/* Right Column: Details */}
-      <div style={{ flex: '2 1 300px', maxWidth: 500,marginLeft:'2rem' }}>
+      <div style={{ flex: '2 1 300px', maxWidth: 500, marginLeft: '2rem' }}>
         <h2 style={{ marginBottom: '2rem' }}>{title}</h2>
         <p style={{ marginBottom: '1.5rem', color: '#555' }}>{description}</p>
         <h3 style={{ color: '#e214a8ff', marginBottom: '2rem' }}>{price}</h3>
         <div>
-            Product ID: {id}
+          Product ID: {id}
         </div>
         <button
-        onClick={handleBuyNow}
           style={{
             padding: '0.8rem 2rem',
             background: '#e214a8ff',
@@ -87,12 +85,19 @@ const ProductsDisplay = ({ title = "Product Title", description = "Product descr
             cursor: 'pointer',
             fontWeight: 'bold'
           }}
+          onClick={handleBuyNow}
         >
           Buy Now
         </button>
       </div>
     </div>
   );
+};
+
+ProductsDisplay.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  price: PropTypes.string
 };
 
 export default ProductsDisplay;
