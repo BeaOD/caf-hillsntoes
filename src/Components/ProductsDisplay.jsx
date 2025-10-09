@@ -10,7 +10,7 @@ const images = [
   '/assets/kelly-sikkema-Tn8DLxwuDMA-unsplash.jpg',
 ];
 
-const ProductsDisplay = ({ title = "Product Title", description = "Product description goes here.", price = "$99.99" }) => {
+const ProductsDisplay = ({ title = "Product Title", description = "Product description goes here.", price = "GHC 120.00" }) => {
   const [mainImage, setMainImage] = useState(images[0]);
   const { id } = useParams();
   const { addToCart } = useCart();
@@ -19,6 +19,11 @@ const ProductsDisplay = ({ title = "Product Title", description = "Product descr
   const handleBuyNow = () => {
     addToCart({ id, title, description, price });
     navigate('/ProductPayment');
+  };
+
+   const handleAddToCart = () => {
+    addToCart({ id, title, description, price });
+    navigate('/CartCheckout'); // or '/payment'
   };
 
   return (
@@ -89,6 +94,24 @@ const ProductsDisplay = ({ title = "Product Title", description = "Product descr
         >
           Buy Now
         </button>
+        <div>
+          <button
+          style={{
+            padding: '0.8rem 2rem',
+            background: '#e214a8ff',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '6px',
+            fontSize: '1.1rem',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            marginTop: '1rem'
+          }}
+          onClick={handleAddToCart}
+        >
+          Add to Cart
+        </button>
+        </div>
       </div>
     </div>
   );

@@ -10,9 +10,17 @@ const Card = ({ id, title, description,image,price }) => {
   const navigate = useNavigate();
 
   const handleBuyNow = () => {
-    addToCart({ id, title, description, image, price });
-    navigate('/ProductPayment'); // or '/payment'
+    navigate('/ProductPayment' , { state: { imageUrl: image, title, price } }); // '/single product checkout'
   };
+
+//   const handleBuyNow = () => {
+//   navigate('/checkout', { state: { imageUrl: image, title, price } });
+// };
+
+  const handleAddToCart = () => {
+    addToCart({ id, title, description, image, price });
+    navigate('/CartCheckout',  { state: { imageUrl: image, title, price } }); // '/ cart checkout payment'
+  }
 
     return (
    <Link to={`/ProductsDisplay/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -56,6 +64,23 @@ const Card = ({ id, title, description,image,price }) => {
            
             Buy Now
         </button>
+        <div> 
+
+         <button 
+        onClick={handleAddToCart}
+        style={{
+            marginTop: '12px',
+            padding: '8px 16px',
+            backgroundColor: '#7cc0e8ff' ,
+            color: '#e214a8ff',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer'
+        }}>
+           
+            Add To Cart
+        </button>
+        </div>
     </div>
     </Link>
 );
